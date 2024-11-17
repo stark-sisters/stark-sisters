@@ -84,7 +84,6 @@
       margin-top: 10px;
       display: inline-block;
       font-family: monospace;
-      word-break:break-all;
     }
 
     .contract button {
@@ -281,22 +280,74 @@
   font-size: 0.9em;
   font-weight: bold;
 }
+
+.top-social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  background: #f7f7f7; /* Light background for subtlety */
+  border-bottom: 1px solid #ddd; /* Adds a separator */
+  font-size: 0.8em; /* Small font size */
+}
+
+.top-social-links a {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  color: #333; /* Neutral text color */
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.top-social-links a:hover {
+  opacity: 0.7; /* Slight fade on hover */
+}
+
+.top-social-links img {
+  width: 20px; /* Small icon size */
+  height: 20px;
+  margin-right: 5px; /* Space between icon and text */
+}
+
+
   </style>
 </head>
 
 <body>
+
+  <div class="top-social-links">
+    <a href="https://flappy.sstr.fun" target="_blank">
+      <img src="sisterlogo.PNG" alt="SSTR Logo"> Flappy $SSTR
+    </a>
+    <a href="https://x.com/Stark_Sisters" target="_blank">
+      <img src="x.png" alt="Twitter Logo"> X
+    </a>
+    <a href="https://t.co/16YLFgyfnX" target="_blank">
+      <img src="telegram.png" alt="Telegram Logo"> Telegram
+    </a>
+    <a href="https://dexscreener.com/starknet/0x0102d5e124c51b936ee87302e0f938165aec96fb6c2027ae7f3a5ed46c77573b-0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7-1020847100762815390390123822295304634-5982-0x0"
+      target="_blank">
+      <img src="dexscanner.png" alt="Dexscanner Logo"> Dexscanner
+    </a>
+    <a href="https://tenor.com/tr/users/starknetsister" target="_blank">
+      <img src="tenor.png" alt="Tenor Logo"> Tenor
+    </a>
+  </div>
 
   <header>
     <h1>Welcome to the World of SISTER ($SSTR)!</h1>
     <p>The meme coin you didn't know you needed—now on Starknet.</p>
   </header>
 
+  
+
   <section class="buy-section">
     <img src="sister-cover.png" alt="SISTER Cover Image" class="cover-image">
     <h2>Buy Now or Cry Later!</h2>
     <p>Your SISTER wants you to join the family. Don't keep her waiting.</p>
     <button
-      onclick="window.location.href='https://app.fibrous.finance/tr?network=starknet&mode=swap&source=0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d&destination=0x0102d5e124c51b936ee87302e0f938165aec96fb6c2027ae7f3a5ed46c77573b';">
+      onclick="window.location.href='https://app.fibrous.finance/tr?network=starknet&mode=swap&source=0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7&destination=0x0102d5e124c51b936ee87302e0f938165aec96fb6c2027ae7f3a5ed46c77573b';">
       Buy $SSTR
     </button>
   </section>
@@ -317,7 +368,7 @@
       <div class="step">
         <div class="step-number">3</div>
         <h3>Swap $ETH for $SSTR</h3>
-        <p>Visit platforms like <a href="https://app.fibrous.finance/tr?network=starknet&mode=swap&source=0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d&destination=0x0102d5e124c51b936ee87302e0f938165aec96fb6c2027ae7f3a5ed46c77573b" target="_blank">Fibrous</a> or <a href="https://app.ekubo.org/?outputCurrency=SSTR&amount=1&inputCurrency=STRK" target="_blank">Ekubo</a>.</p>
+        <p>Visit platforms like <a href="https://app.fibrous.finance/tr?network=starknet&mode=swap&source=0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7&destination=0x0102d5e124c51b936ee87302e0f938165aec96fb6c2027ae7f3a5ed46c77573b" target="_blank">Fibrous</a>, <a href="https://app.ekubo.org/?outputCurrency=SSTR&amount=1&inputCurrency=ETH" target="_blank">Ekubo</a>, or <a href="https://app.avnu.fi/tr?mode=simple&tokenFrom=0x49d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7&tokenTo=0x102d5e124c51b936ee87302e0f938165aec96fb6c2027ae7f3a5ed46c77573b&amount=0.001" target="_blank">AVNU</a>.</p>
           <p>Connect your wallet and follow the simple steps to swap $ETH for $SSTR.</p>
       </div>
       <div class="step">
@@ -348,8 +399,8 @@
       <img src="https://media1.tenor.com/m/6BwrHUDwP00AAAAd/memecoin-sstr.gif" alt="GIF 3">
       <img src="https://media1.tenor.com/m/Bg12FECj884AAAAd/sstr-pump.gif" alt="GIF 4">
       <img src="https://media1.tenor.com/m/YRQFBEb2ynsAAAAd/memecoin-sstr.gif" alt="GIF 5">
-      <img src="https://media.tenor.com/N94UrrK6xlAAAAAi/strk-sstr.gif" alt="GIF 6">
-      <img src="https://media.tenor.com/Ot2BwgJse8MAAAAi/sstr-hodl.gif" alt="GIF 7">
+      <img src="https://media.tenor.com/N94UrrK6xlAAAAAj/strk-sstr.gif" alt="GIF 6">
+      <img src="https://media.tenor.com/Ot2BwgJse8MAAAAj/sstr-hodl.gif" alt="GIF 7">
     </div>
   </section>
 
