@@ -3,679 +3,383 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Flappy Sister</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SISTER ($SSTR) - Starknet Meme Coin</title>
   <style>
-    html,
     body {
-      height: 100%;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
+      color: #333;
     }
 
-    body {
+    header {
+      background: #ff69b4;
+      color: #fff;
+      padding: 20px 10%;
+      text-align: center;
+    }
+
+    section {
+      padding: 40px 10%;
+    }
+
+    .buy-section {
+      text-align: center;
+      background: #f7f7f7;
+      padding: 40px 10%;
+    }
+
+    .buy-section .cover-image {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .buy-section button {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    .buy-section button:hover {
+      background: #ff4790;
+    }
+
+    .buy-section button:hover {
+      background: #ff4790;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .tokenomics {
+      text-align: center;
+    }
+
+    .contract {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      display: inline-block;
+      font-family: monospace;
+      word-break:break-all;
+    }
+
+    .contract button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      cursor: pointer;
+      background: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 3px;
+    }
+
+    .gif-gallery {
+  padding: 40px 10%;
+  background: #fff5f7;
+  text-align: center;
+}
+
+.gif-gallery h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #ff69b4;
+}
+
+.gif-gallery p {
+  margin-bottom: 20px;
+  color: #555;
+  font-size: 1em;
+}
+
+.gif-gallery a {
+  color: #ff69b4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.gif-gallery a:hover {
+  text-decoration: underline;
+}
+
+.gif-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  justify-items: center;
+  align-items: center;
+}
+
+.gif-grid img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gif-grid img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+    .social-links a {
+      margin: 0 10px;
+      color: #ff69b4;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .how-to-buy {
+      padding: 40px 10%;
+      background: #f9f9f9;
+      text-align: center;
+    }
+
+    .how-to-buy h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transform: scale(0.95);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .step:hover {
+      transform: scale(1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .step-number {
+      position: absolute;
+      top: -15px;
+      left: 15px;
+      background: #ff69b4;
+      color: white;
+      font-size: 1.5em;
+      font-weight: bold;
+      width: 40px;
+      height: 40px;
       display: flex;
-      justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      background: linear-gradient(to bottom, #ffcce6, #ff99cc);
-      font-family: 'Arial', sans-serif;
+      justify-content: center;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .step h3 {
+      font-size: 1.3em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: #555;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+
+    .step a {
+      color: #ff69b4;
+      text-decoration: none;
+    }
+
+    .step a:hover {
+      text-decoration: underline;
     }
 
     .social-links {
-      width: 100%;
-      background: #ff66b2;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-      position: absolute;
-      top: 0;
-      z-index: 1000;
-    }
+  padding: 40px 10%;
+  text-align: center;
+  background: #f7f7f7;
+}
 
-    .social-links a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-    }
+.social-links h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #333;
+}
 
-    .social-links img {
-      width: 25px;
-      height: 25px;
-      margin-right: 8px;
-    }
+.social-links p {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 20px;
+}
 
-    /* Style for the footer */
-    .footer-social-links {
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
 
-      padding: 10px 0;
+.social-grid a {
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-      width: 100%;
-      background: #ff66b2;
-      display: flex;
-      justify-content: center;
-      position: absolute;
-      bottom: 0;
-      z-index: 1000;
+.social-grid a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-    }
+.social-grid img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
 
-    /* Style for the slogan */
-    .footer-slogan {
-      font-size: 18px;
-      font-weight: bold;
-      /* Or any color you like */
-      margin-bottom: 0px;
-    }
-
-
-    /* Style the images to be smaller */
-    .footer-social-links img {
-      width: 30px;
-      /* Adjust size of the icons */
-      height: 30px;
-      border-radius: 50%;
-      /* Makes the icons round */
-    }
-
-    .footer-social-links a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-    }
-
-    #game-container {
-      position: relative;
-      width: 400px;
-      height: 600px;
-      overflow: hidden;
-      background: linear-gradient(to bottom, #e6f3ff, #cce6ff);
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      border: 3px solid #ff66b2;
-      cursor: pointer;
-    }
-
-    #bird {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      background-image: url("https://pbs.twimg.com/profile_images/1855335713970987008/qcwhT4K4_400x400.jpg");
-      background-size: cover;
-      left: 50px;
-      top: 300px;
-      transform-origin: center;
-    }
-
-    .pipe {
-      position: absolute;
-      width: 60px;
-      background: linear-gradient(to right, #ff66b2, #ff99cc);
-      border-radius: 10px;
-    }
-
-    .crypto-coin {
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .crypto-btc {
-      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/300px-Bitcoin.svg.png");
-      background-size: cover;
-      width: 25px;
-      height: 25px;
-      display: inline-block;
-    }
-
-    .crypto-eth {
-      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Eth-diamond-rainbow.png/240px-Eth-diamond-rainbow.png");
-      background-size: cover;
-      width: 25px;
-      height: 25px;
-      display: inline-block;
-    }
-
-    .crypto-doge {
-      background-image: url("https://upload.wikimedia.org/wikipedia/en/d/d0/Dogecoin_Logo.png");
-      background-size: cover;
-      width: 25px;
-      height: 25px;
-      display: inline-block;
-    }
-
-    .crypto-strk {
-      background-image: url("https://pbs.twimg.com/profile_images/1637128169604915205/01smej1e_400x400.jpg");
-      background-size: cover;
-      width: 25px;
-      height: 25px;
-      display: inline-block;
-    }
-
-    .crypto-brother {
-      background-image: url("https://pbs.twimg.com/profile_images/1855474730570280960/upVkZ8Q2_400x400.jpg");
-      background-size: cover;
-      width: 25px;
-      height: 25px;
-      display: inline-block;
-    }
-
-    .crypto-sch {
-      background-image: url("https://pbs.twimg.com/profile_images/1857461854735355904/4oICaNpQ_400x400.jpg");
-      background-size: cover;
-      width: 25px;
-      height: 25px;
-      display: inline-block;
-    }
-
-    .crypto-SLINKY {
-      background-image: url("https://pbs.twimg.com/profile_images/1847540030065070080/gk7DRIy6_400x400.jpg");
-      background-size: cover;
-      width: 25px;
-      height: 25px;
-      display: inline-block;
-    }
-
-    .crypto-Socks {
-      background-image: url("https://pbs.twimg.com/profile_images/1790975988932698112/11-Df8n6_400x400.jpg");
-      background-size: cover;
-      width: 25px;
-      height: 25px;
-      display: inline-block;
-    }
-
-    .crypto-alf {
-      background-image: url("https://pbs.twimg.com/profile_images/1851696385638244352/W1_Y-6WC_400x400.jpg");
-      background-size: cover;
-      width: 25px;
-      height: 25px;
-      display: inline-block;
-    }
-
-    .crypto-wizardwifhat {
-      background-image: url("https://pbs.twimg.com/profile_images/1844906927832145920/oX9_I7Oc_400x400.jpg");
-      background-size: cover;
-      width: 25px;
-      height: 25px;
-      display: inline-block;
-    }
-
-    .crypto-TrumpWifCat {
-      background-image: url("https://pbs.twimg.com/profile_images/1838368964319350784/h4cTYmbU_400x400.jpg");
-      background-size: cover;
-      width: 25px;
-      height: 25px;
-      display: inline-block;
-    }
-
-    #score {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 24px;
-      color: #ff66b2;
-      font-weight: bold;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-      z-index: 100;
-    }
-
-    #start-screen,
-    #game-over {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: rgba(255, 255, 255, 0.95);
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      border: 3px solid #ff66b2;
-      z-index: 1000;
-    }
-
-    #game-over {
-      display: none;
-    }
-
-    .btn {
-      background: #ff66b2;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 20px;
-      cursor: pointer;
-      margin: 5px;
-      font-size: 16px;
-      transition: all 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .btn:hover {
-      transform: scale(1.1);
-      background: #ff4da6;
-    }
-
-    .btn-x {
-      background: #000;
-      padding: 10px 25px;
-    }
-
-    .btn-x:hover {
-      background: #333;
-    }
-
-    .sparkle {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      pointer-events: none;
-      border-radius: 50%;
-      animation: sparkle 1s linear forwards;
-    }
-
-    @keyframes sparkle {
-      0% {
-        transform: scale(0) rotate(0deg);
-        opacity: 1;
-      }
-
-      100% {
-        transform: scale(1) rotate(180deg);
-        opacity: 0;
-      }
-    }
-
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-5px);
-      }
-    }
-
-    #bird {
-      animation: float 1.5s ease-in-out infinite;
-    }
-
-    h1,
-    h2 {
-      color: #ff66b2;
-      margin: 0 0 20px 0;
-    }
+.social-grid span {
+  display: block;
+  font-size: 0.9em;
+  font-weight: bold;
+}
   </style>
 </head>
 
 <body>
 
-  <div class="social-links">
-    <a href="https://sstr.fun" target="_blank">
-      <img src="sisterlogo.PNG" alt="Tenor Logo">
-      $SSTR
-    </a>
-    <a href="https://x.com/Stark_Sisters" target="_blank">
-      <img src="x.png" alt="Twitter Logo">
-      X
-    </a>
-    <a href="https://t.co/16YLFgyfnX" target="_blank">
-      <img src="telegram.png" alt="Telegram Logo">
-      Telegram
-    </a>
-    <a href="https://dexscreener.com/starknet/0x0102d5e124c51b936ee87302e0f938165aec96fb6c2027ae7f3a5ed46c77573b-0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7-1020847100762815390390123822295304634-5982-0x0"
-      target="_blank">
-      <img src="dexscanner.png" alt="Dexscanner Logo">
-      Dexscanner
-    </a>
-    <a href="https://tenor.com/tr/users/starknetsister" target="_blank">
-      <img src="tenor.png" alt="Tenor Logo">
-      Tenor
-    </a>
-  </div>
+  <header>
+    <h1>Welcome to the World of SISTER ($SSTR)!</h1>
+    <p>The meme coin you didn't know you needed—now on Starknet.</p>
+  </header>
 
-  <div id="game-container">
-    <div id="bird"></div>
-    <div id="score">0</div>
+  <section class="buy-section">
+    <img src="sister-cover.png" alt="SISTER Cover Image" class="cover-image">
+    <h2>Buy Now or Cry Later!</h2>
+    <p>Your SISTER wants you to join the family. Don't keep her waiting.</p>
+    <button
+      onclick="window.location.href='https://app.fibrous.finance/tr?network=starknet&mode=swap&source=0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d&destination=0x0102d5e124c51b936ee87302e0f938165aec96fb6c2027ae7f3a5ed46c77573b';">
+      Buy $SSTR
+    </button>
+  </section>
 
-    <div id="start-screen">
-      <h1>Flappy SSTR</h1>
-      <button class="btn" onclick="startGame()">Start Game</button>
+  <section class="how-to-buy">
+    <h2>How to Buy $SSTR in 4 Easy Steps</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Set Up Your Wallet</h3>
+        <p>Download a Starknet-compatible wallet like <strong>Argent</strong> or <strong>Braavos</strong>.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Deposit $ETH</h3>
+        <p>Buy $ETH on your favorite crypto exchange and transfer it to your Starknet wallet.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Swap $ETH for $SSTR</h3>
+        <p>Visit platforms like <a href="https://app.fibrous.finance/tr?network=starknet&mode=swap&source=0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d&destination=0x0102d5e124c51b936ee87302e0f938165aec96fb6c2027ae7f3a5ed46c77573b" target="_blank">Fibrous</a> or <a href="https://app.ekubo.org/?outputCurrency=SSTR&amount=1&inputCurrency=STRK" target="_blank">Ekubo</a>.</p>
+          <p>Connect your wallet and follow the simple steps to swap $ETH for $SSTR.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Enjoy Your $SSTR</h3>
+        <p>Congratulations! You’re now a $SSTR holder. </p>
+        <p>Welcome to the family! 💅</p>
+      </div>
     </div>
+  </section>
 
-    <div id="game-over">
-      <h2>Game Over!</h2>
-      <p>Score: <span id="final-score">0</span></p>
-      <button class="btn" onclick="restartGame()">Play Again</button>
-      <button class="btn btn-x" onclick="shareScore()">
-        <svg class="x-icon" viewBox="0 0 24 24" fill="white">
-          <path
-            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-        </svg>
-        Share Score
-      </button>
+  <section class="tokenomics">
+    <h2>Tokenomics & Contract Address</h2>
+    <p><strong>Supply:</strong> 10,000,000,000 $SSTR</p>
+    <p><strong>Tax:</strong> 0% Buy | 0% Sell</p>
+    <div class="contract">
+      <span>0x0102d5e124c51b936ee87302e0f938165aec96fb6c2027ae7f3a5ed46c77573b</span>
+      <button onclick="navigator.clipboard.writeText('0x0102d5e124c51b936ee87302e0f938165aec96fb6c2027ae7f3a5ed46c77573b')">Copy</button>
     </div>
+  </section>
 
+  <section class="gif-gallery">
+    <h2>Meme Magic in Motion!</h2>
+    <p>Check out our collection and join the fun! Explore more on our <a href="https://tenor.com/tr/users/starknetsister" target="_blank">Tenor</a>.</p>
+    <div class="gif-grid">
+      <img src="https://media1.tenor.com/m/BEs0KOwtMdsAAAAd/gm-sister.gif" alt="GIF 1">
+      <img src="https://media1.tenor.com/m/kr6bh0saC6oAAAAd/sstr-pump.gif" alt="GIF 2">
+      <img src="https://media1.tenor.com/m/6BwrHUDwP00AAAAd/memecoin-sstr.gif" alt="GIF 3">
+      <img src="https://media1.tenor.com/m/Bg12FECj884AAAAd/sstr-pump.gif" alt="GIF 4">
+      <img src="https://media1.tenor.com/m/YRQFBEb2ynsAAAAd/memecoin-sstr.gif" alt="GIF 5">
+      <img src="https://media.tenor.com/N94UrrK6xlAAAAAi/strk-sstr.gif" alt="GIF 6">
+      <img src="https://media.tenor.com/Ot2BwgJse8MAAAAi/sstr-hodl.gif" alt="GIF 7">
+    </div>
+  </section>
 
-  </div>
+  <section class="social-links">
+    <h2>Stay Connected</h2>
+    <p>Follow us on social media and stay updated with the latest $SSTR news!</p>
+    <div class="social-grid">
+      <a href="https://x.com/Stark_Sisters" target="_blank">
+        <img src="x.png" alt="Twitter Logo">
+        <span>X</span>
+      </a>
+      <a href="https://t.co/16YLFgyfnX" target="_blank">
+        <img src="telegram.png" alt="Telegram Logo">
+        <span>Telegram</span>
+      </a>
+      <a href="https://dexscreener.com/starknet/0x0102d5e124c51b936ee87302e0f938165aec96fb6c2027ae7f3a5ed46c77573b-0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7-1020847100762815390390123822295304634-5982-0x0" target="_blank">
+        <img src="dexscanner.png" alt="Dexscanner Logo">
+        <span>Dexscanner</span>
+      </a>
+      <a href="https://tenor.com/tr/users/starknetsister" target="_blank">
+        <img src="tenor.png" alt="Tenor Logo">
+        <span>Tenor</span>
+      </a>
+    </div>
+  </section>
 
+  <!-- <footer>
+    <p>&copy; 2024 SISTER ($SSTR) - All Rights Reserved</p>
+  </footer> -->
 
-
-
-
-  <footer class="footer-social-links">
-
-    <!-- <div class="footer-slogan">
-      <p>We Are Family, Stronger Together! 💅</p>
-    </div> -->
-
-
-    <a href="https://x.com/Starknet" target="_blank">
-      <img src="https://pbs.twimg.com/profile_images/1834202903189618688/N4J8emeY_400x400.png">
-    </a>
-
-    <a href="https://x.com/Stark_Sisters" target="_blank">
-      <img src="https://pbs.twimg.com/profile_images/1855335713970987008/qcwhT4K4_400x400.jpg">
-    </a>
-    <a href="https://x.com/StarknetBro" target="_blank">
-      <img src="https://pbs.twimg.com/profile_images/1855474730570280960/upVkZ8Q2_400x400.jpg">
-    </a>
-    <a href="https://x.com/TrumpWifCatSTRK" target="_blank">
-      <img src="https://pbs.twimg.com/profile_images/1838368964319350784/h4cTYmbU_400x400.jpg">
-    </a>
-    <a href="https://x.com/onchainwizards" target="_blank">
-      <img src="https://pbs.twimg.com/profile_images/1844906927832145920/oX9_I7Oc_400x400.jpg">
-    </a>
-
-    <a href="https://x.com/ALF_Starknet" target="_blank">
-      <img src="https://pbs.twimg.com/profile_images/1851696385638244352/W1_Y-6WC_400x400.jpg">
-    </a>
-
-    <a href="https://x.com/SocksStarknet" target="_blank">
-      <img src="https://pbs.twimg.com/profile_images/1790975988932698112/11-Df8n6_400x400.jpg">
-    </a>
-
-    <a href="https://x.com/schizodio" target="_blank">
-      <img src="https://pbs.twimg.com/profile_images/1857461854735355904/4oICaNpQ_400x400.jpg">
-    </a>
-
-  </footer>
-
-  <script>
-    const gameContainer = document.getElementById('game-container');
-    const bird = document.getElementById('bird');
-    const scoreElement = document.getElementById('score');
-    const gameOverScreen = document.getElementById('game-over');
-    const startScreen = document.getElementById('start-screen');
-    const finalScoreElement = document.getElementById('final-score');
-
-    const cryptoSymbols = [
-      { symbol: '₿', name: 'BTC', class: 'crypto-btc', points: 1 },
-      { symbol: 'Ξ', name: 'ETH', class: 'crypto-eth', points: 2 },
-      { symbol: 'Ð', name: 'DOGE', class: 'crypto-doge', points: 3 },
-      { symbol: 'B', name: 'Brother', class: 'crypto-brother', points: 8 },
-      { symbol: 'S', name: 'STRK', class: 'crypto-strk', points: 4 },
-      { symbol: 'S', name: 'schizodio', class: 'crypto-sch', points: 7 },
-      { symbol: 'S', name: 'SLINKY', class: 'crypto-SLINKY', points: 6 },
-      { symbol: 'S', name: 'Socks', class: 'crypto-Socks', points: 8 },
-      { symbol: 'S', name: 'Alf', class: 'crypto-alf', points: 9 },
-      { symbol: 'S', name: 'wizardwifhat', class: 'crypto-wizardwifhat', points: 9 },
-      { symbol: 'S', name: 'TrumpWifCat', class: 'crypto-TrumpWifCat', points: 6 },
-    ];
-
-    let gameStarted = false;
-    let gameLoop;
-    let score = 0;
-    let birdY = 300;
-    let velocity = 0;
-    let gravity = 0.5;
-    let pipes = [];
-    let coins = [];
-    let difficulty = 1;
-    let lastPipeTime = 0;
-    let pipeInterval = 2000;
-
-    function startGame() {
-      if (gameStarted) return;
-      gameStarted = true;
-      startScreen.style.display = 'none';
-      resetGame();
-      gameLoop = setInterval(updateGame, 20);
-      document.addEventListener('click', jump);
-      document.addEventListener('keydown', (e) => {
-        if (e.code === 'Space') jump();
-      });
-    }
-
-    function resetGame() {
-      birdY = 300;
-      velocity = 0;
-      score = 0;
-      pipes.forEach(pipe => {
-        gameContainer.removeChild(pipe.top);
-        gameContainer.removeChild(pipe.bottom);
-      });
-      coins.forEach(coin => {
-        if (coin.element.parentNode) {
-          gameContainer.removeChild(coin.element);
-        }
-      });
-      pipes = [];
-      coins = [];
-      difficulty = 1;
-      scoreElement.textContent = '0';
-      bird.style.top = birdY + 'px';
-      gameOverScreen.style.display = 'none';
-      lastPipeTime = Date.now();
-    }
-
-    function createSparkles(element) {
-      for (let i = 0; i < 5; i++) {
-        const sparkle = document.createElement('div');
-        sparkle.className = 'sparkle';
-        sparkle.style.left = (element.offsetLeft + Math.random() * 40) + 'px';
-        sparkle.style.top = (element.offsetTop + Math.random() * 40) + 'px';
-        sparkle.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 75%)`;
-        gameContainer.appendChild(sparkle);
-        setTimeout(() => sparkle.remove(), 1000);
-      }
-    }
-
-    function jump() {
-      if (!gameStarted) return;
-      velocity = -8;
-      createSparkles(bird);
-    }
-
-    function createPipe() {
-      const gap = 200 - (difficulty * 10);
-      const pipeTop = document.createElement('div');
-      const pipeBottom = document.createElement('div');
-      const pipeY = Math.random() * (300 - gap) + 100;
-
-      pipeTop.className = 'pipe';
-      pipeBottom.className = 'pipe';
-      pipeTop.style.height = pipeY + 'px';
-      pipeBottom.style.height = (600 - pipeY - gap) + 'px';
-      pipeTop.style.left = '400px';
-      pipeBottom.style.left = '400px';
-      pipeTop.style.top = '0';
-      pipeBottom.style.bottom = '0';
-
-      gameContainer.appendChild(pipeTop);
-      gameContainer.appendChild(pipeBottom);
-      pipes.push({ top: pipeTop, bottom: pipeBottom, passed: false });
-
-      if (Math.random() < 1.1) {  // Increased coin spawn rate
-        const randomCrypto = cryptoSymbols[Math.floor(Math.random() * cryptoSymbols.length)];
-        const coin = document.createElement('div');
-        coin.className = `crypto-coin ${randomCrypto.class}`;
-        coin.style.left = '400px';
-        coin.style.top = (pipeY + gap / 2) + 'px';
-        gameContainer.appendChild(coin);
-        coins.push({ element: coin, collected: false, points: randomCrypto.points });
-      }
-    }
-
-    function updateGame() {
-      if (!gameStarted) return;
-
-      velocity += gravity;
-      birdY += velocity;
-      bird.style.top = birdY + 'px';
-      bird.style.transform = `rotate(${velocity * 3}deg)`;
-
-      const currentTime = Date.now();
-      if (currentTime - lastPipeTime > pipeInterval) {
-        createPipe();
-        lastPipeTime = currentTime;
-      }
-
-      // Update pipes
-      for (let i = pipes.length - 1; i >= 0; i--) {
-        const pipe = pipes[i];
-        const pipeX = parseInt(pipe.top.style.left) - 2;
-        pipe.top.style.left = pipeX + 'px';
-        pipe.bottom.style.left = pipeX + 'px';
-
-        if (checkCollision(pipe)) {
-          gameOver();
-          return;
-        }
-
-        if (!pipe.passed && pipeX < 50) {
-          pipe.passed = true;
-          score++;
-          difficulty = Math.min(5, 1 + Math.floor(score / 10));
-          scoreElement.textContent = score;
-        }
-
-        if (pipeX < -60) {
-          gameContainer.removeChild(pipe.top);
-          gameContainer.removeChild(pipe.bottom);
-          pipes.splice(i, 1);
-        }
-      }
-
-      // Update coins
-      for (let i = coins.length - 1; i >= 0; i--) {
-        const coin = coins[i];
-        const coinX = parseInt(coin.element.style.left) - 2;
-        coin.element.style.left = coinX + 'px';
-
-        if (!coin.collected && checkCoinCollision(coin)) {
-          coin.collected = true;
-          score += coin.points;
-          scoreElement.textContent = score;
-          createSparkles(coin.element);
-          gameContainer.removeChild(coin.element);
-          coins.splice(i, 1);
-        } else if (coinX < -30) {
-          gameContainer.removeChild(coin.element);
-          coins.splice(i, 1);
-        }
-      }
-
-      if (birdY < 0 || birdY > 560) {
-        gameOver();
-      }
-    }
-
-    function checkCollision(pipe) {
-      const birdRect = bird.getBoundingClientRect();
-      const topPipeRect = pipe.top.getBoundingClientRect();
-      const bottomPipeRect = pipe.bottom.getBoundingClientRect();
-
-      return (
-        birdRect.right > topPipeRect.left &&
-        birdRect.left < topPipeRect.right && (
-          birdRect.top < topPipeRect.bottom ||
-          birdRect.bottom > bottomPipeRect.top
-        )
-      );
-    }
-
-    function checkCoinCollision(coin) {
-      const birdRect = bird.getBoundingClientRect();
-      const coinRect = coin.element.getBoundingClientRect();
-
-      return (
-        birdRect.right > coinRect.left &&
-        birdRect.left < coinRect.right &&
-        birdRect.top < coinRect.bottom &&
-        birdRect.bottom > coinRect.top
-      );
-    }
-
-    function gameOver() {
-      gameStarted = false;
-      clearInterval(gameLoop);
-      finalScoreElement.textContent = score;
-      gameOverScreen.style.display = 'block';
-    }
-
-    function restartGame() {
-      resetGame();
-      startGame();
-    }
-
-    function generateTweet(score) {
-      // Define the tweet templates
-      const templates = [
-        `I scored ${score} $SSTR in Flappy Sister! Can you beat my score? 🐦🚀`,
-        `Challenge accepted! I scored ${score} $SSTR in Flappy Sister 🐦🚀 Can you do better?`,
-        `Flappy Sister, level master! I scored ${score} $SSTR 🐦🚀 Can anyone top this?`,
-        `Sister's on fire! ${score} $SSTR! Can you outscore me? 🐦🚀`,
-        `Just hit ${score} $SSTR in Flappy Sister 🐦🚀 Beat that if you can!`
-      ];
-
-      // List of people to mention
-      const people = ["@StarknetBro", "@odin_free", "@TobbyKitty", "@ALF_Starknet", "@dimahledba"];
-
-      // Select a random template
-      const tweetText = templates[Math.floor(Math.random() * templates.length)];
-
-      // Select a random person to mention
-      const randomPerson = people[Math.floor(Math.random() * people.length)];
-
-      // Add the person mention to the tweet text
-      const finalTweetText = `${tweetText} ${randomPerson}`;
-
-      return finalTweetText;
-    }
-
-    function shareScore() {
-
-      const score = document.getElementById('final-score').textContent;
-
-      // Generate a random tweet using the score
-      const tweetText = generateTweet(score);
-
-      // Create the tweet URL with the generated tweet
-      const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
-
-      // Open the tweet URL in a new tab
-      window.open(tweetUrl, '_blank');
-    }
-
-    // Example usage: generate tweet for score 123
-    const tweetUrl = generateTweet(123);
-    console.log(tweetUrl);  // Output the URL for the share button
-  </script>
 </body>
 
 </html>
